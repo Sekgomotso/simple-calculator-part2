@@ -1,34 +1,34 @@
-module.exports = {
-    add,
-    multiply
-}
+// module.exports = {
+//     add,
+//     multiply
+// }
 
-function add() {
-    var add = 0;
+// function add() {
+//     var add = 0;
     
-    for (i = 0; i < arguments.length; i++) {
-        add += arguments[i];
-    }
-    return add;
-}
+//     for (i = 0; i < arguments.length; i++) {
+//         add += arguments[i];
+//     }
+//     return add;
+// }
 
-function multiply() {
-    var multiply = 1;
+// function multiply() {
+//     var multiply = 1;
 
-    for (i = 1; i < arguments.length; i++) {
-        multiply *= arguments[i];
-    }
-    return multiply;
-}
+//     for (i = 1; i < arguments.length; i++) {
+//         multiply *= arguments[i];
+//     }
+//     return multiply;
+// }
 
-class Calculator {
+module.exports = class Calculator {
     constructor () {
         this.add = 0;
-        this.multiply = 0;
+        this.multiply = 1;
     }
 
     // Add multiple numbers function
-    function add() {
+    add() {
         var add = 0;
         
         for (i = 0; i < arguments.length; i++) {
@@ -39,7 +39,7 @@ class Calculator {
 
     // Multiply multiple numbers function
 
-    function multiply() {
+    multiply() {
         var multiply = 1;
     
         for (i = 1; i < arguments.length; i++) {
@@ -48,3 +48,6 @@ class Calculator {
         return multiply;
     }
 }
+
+// var answer = new Calculator();
+// console.log(answer.add(1,2));
