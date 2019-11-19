@@ -1,14 +1,17 @@
-var calculator = require('../src/calculator');
-let calc = new calculator;
-console.log(calc.add(1,2));
+var {Calculator} = require('../src/calculator');
+var answer = new Calculator;
 
+console.log(answer.add(1,0));
+console.log(answer.last());
 
-// describe("Simple calculator to add two numbers", function () {
-//     it("Should return 0", function () {
-//         expect(calculator.add(0,0)).toEqual(0);
-//     });
+describe("Simple calculator to add two numbers", function () {
+    it("Should return 0", function () {
+        expect(answer.add(0,0)).toEqual(0);
+    });
 
-// });
+});
+
+// console.log(answer.add(1,2));
 // describe("Simple calculator to add two numbers", function () {
 //     it("Should return -2", function () {
 //         expect(calculator.add(-1,-1)).toEqual(-2);

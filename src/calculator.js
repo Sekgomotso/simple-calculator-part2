@@ -1,40 +1,25 @@
-// module.exports = {
-//     add,
-//     multiply
-// }
-
-// function add() {
-//     var add = 0;
-    
-//     for (i = 0; i < arguments.length; i++) {
-//         add += arguments[i];
-//     }
-//     return add;
-// }
-
-// function multiply() {
-//     var multiply = 1;
-
-//     for (i = 1; i < arguments.length; i++) {
-//         multiply *= arguments[i];
-//     }
-//     return multiply;
-// }
-
-module.exports = class Calculator {
+class Calculator {
     constructor () {
-        this.add = 0;
-        this.multiply = 1;
+        // this.add = 0;
+        // this.multiply = 1;
+        this.lastv = 0;
     }
 
     // Add multiple numbers function
     add() {
-        var add = 0;
+        var sum = 0;
+        var i = 0;
         
         for (i = 0; i < arguments.length; i++) {
-            this.add += arguments[i];
+            if(arguments[i] == 'LAST') {
+                arguments[i] = this.lastv;
+            }
+
+            sum += arguments[i];
+            arguments[i] = this.lastv;
+            this.lastv = sum;
         }
-        return add;
+        return sum;
     }
 
     // Multiply multiple numbers function
@@ -47,7 +32,16 @@ module.exports = class Calculator {
         }
         return multiply;
     }
+
+    last() {
+        return this.lastv;
+    }
 }
 
 // var answer = new Calculator();
-// console.log(answer.add(1,2));
+// console.log(answer.add(1,0));
+// console.log(answer.last());
+
+module.exports = {
+    Calculator
+}
