@@ -1,6 +1,6 @@
 class Calculator {
     constructor () {
-        this.lastv = 0;
+        this.lastv = '';
         this.slotv = [];
     }
 
@@ -14,12 +14,8 @@ class Calculator {
                 arguments[i] = this.lastv;
             }
 
-            if(arguments[i] === 'SLOT_1') {
-                arguments[i] = this.get_slot(1);
-            }
-
-            if(arguments[i] === 'SLOT_2') {
-                arguments[i] = this.get_slot(2);
+            if(arguments[i] === '') {
+                arguments[i] = this.get_slot();
             }
 
             sum += arguments[i];

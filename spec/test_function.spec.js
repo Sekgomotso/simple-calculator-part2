@@ -16,6 +16,18 @@ describe ("Simple calculator to add multiple numbers", function () {
         expect(answer.add(1,2,3,4)).toEqual(10);
     });
 
+    it("last()", () => {
+        expect(add.last_executed_fn_results).toBe(add.lastv());
+    });
+
+    it("set slots (1), get slot", ()=> {
+
+        answer.add(10,20);
+        answer.set_slot(1);
+
+        expect(answer.get_slot(1)).toBe(30);
+    })
+
 });
 
 describe ("Simple calculator to multiply many numbers", function() {
