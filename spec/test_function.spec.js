@@ -17,7 +17,7 @@ describe ("Simple calculator to add multiple numbers", function () {
     });
 
     it("last()", () => {
-        expect(add.last_executed_fn_results).toBe(add.lastv());
+        expect(answer.add('LAST', 5)).toBe(15);
     });
 
     it("set slots (1), get slot", ()=> {
@@ -26,12 +26,13 @@ describe ("Simple calculator to add multiple numbers", function () {
         answer.set_slot(1);
 
         expect(answer.get_slot(1)).toBe(30);
-    })
+    });
 
 });
 
 describe ("Simple calculator to multiply many numbers", function() {
     it("should return 24", function() {
         expect(answer.multiply(1,2,3,4)).toEqual(24);
-    })
+    });
+
 })
